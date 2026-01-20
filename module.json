@@ -3,10 +3,6 @@
   "title": "Advantage and Disadvantage Icon",
   "description": "Show Advantage/Disadvantage as A/D icons on the D&D5e default character sheet. Sources can be configured on items (Details panel) or inferred from item Active Effects.",
   "version": "0.1.1",
-  "compatibility": {
-    "minimum": "13",
-    "verified": "13"
-  },
   "authors": [
     {
       "name": "Erozbey"
@@ -15,9 +11,10 @@
       "name": "Maceracılar Loncası"
     }
   ],
-  "system": [
-    "dnd5e"
-  ],
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13"
+  },
   "esmodules": [
     "scripts/advdis.js"
   ],
@@ -36,8 +33,8 @@
       "path": "lang/tr.json"
     }
   ],
-  "manifest": "https://github.com/MaceracilarLoncasi/advdis-badges/releases/latest/download/module.json",
-  "download": "https://github.com/MaceracilarLoncasi/advdis-badges/releases/latest/download/advdis-badges.zip",
+  "manifest": "https://github.com/MaceracilarLoncasi/advdis-badges/releases/download/v0.1.1/module.json",
+  "download": "https://github.com/MaceracilarLoncasi/advdis-badges/releases/download/v0.1.1/advdis-badges.zip",
   "readme": "https://github.com/MaceracilarLoncasi/advdis-badges/blob/main/README.md",
   "license": "https://github.com/MaceracilarLoncasi/advdis-badges/blob/main/LICENSE"
 }
