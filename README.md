@@ -9,7 +9,7 @@ Badges can come from:
 ## Install
 Foundry VTT → Add-on Modules → Install Module → paste:
 
-https://github.com/MaceracilarLoncasi/advdis-badges/releases/latest/download/module.json
+https://github.com/MaceracilarLoncasi/advdis-badges/releases/download/v0.1.1/module.json
 
 ## Usage
 ### Item Details panel
