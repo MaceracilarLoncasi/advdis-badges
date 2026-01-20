@@ -1,0 +1,18 @@
+{
+  "ADVDIS.SectionTitle": "Advantage / Disadvantage",
+  "ADVDIS.Mode": "Mode",
+  "ADVDIS.None": "None",
+  "ADVDIS.Adv": "Advantage",
+  "ADVDIS.Dis": "Disadvantage",
+  "ADVDIS.Note": "Note",
+  "ADVDIS.NotePH": "Text shown when hovering the badge",
+  "ADVDIS.Skill": "Skill",
+  "ADVDIS.Save": "Saving Throw",
+  "ADVDIS.Select": "Select...",
+  "ADVDIS.Hint": "You can select multiple. Selected entries are listed below; remove with ×.",
+  "ADVDIS.Setting.Language.Name": "Module Language",
+  "ADVDIS.Setting.Language.Hint": "Choose the language used by this module. Does not change Foundry's global language.",
+  "ADVDIS.Setting.Language.Auto": "Auto (Foundry)",
+  "ADVDIS.Setting.Language.English": "English",
+  "ADVDIS.Setting.Language.Turkish": "Türkçe"
+}

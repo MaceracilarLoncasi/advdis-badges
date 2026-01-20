@@ -1,0 +1,18 @@
+{
+  "ADVDIS.SectionTitle": "Avantaj / Dezavantaj",
+  "ADVDIS.Mode": "Durum",
+  "ADVDIS.None": "Yok",
+  "ADVDIS.Adv": "Avantaj",
+  "ADVDIS.Dis": "Dezavantaj",
+  "ADVDIS.Note": "Açıklama",
+  "ADVDIS.NotePH": "Rozetin üstüne gelince görülecek metin",
+  "ADVDIS.Skill": "Kabiliyet",
+  "ADVDIS.Save": "Kurtarma Atışı",
+  "ADVDIS.Select": "Seç...",
+  "ADVDIS.Hint": "Birden fazla seçim yapabilirsin. Eklediklerin aşağıda listelenir; × ile kaldırırsın.",
+  "ADVDIS.Setting.Language.Name": "Modül Dili",
+  "ADVDIS.Setting.Language.Hint": "Bu modülün dilini seç. Foundry'nin genel dilini değiştirmez.",
+  "ADVDIS.Setting.Language.Auto": "Otomatik (Foundry)",
+  "ADVDIS.Setting.Language.English": "English",
+  "ADVDIS.Setting.Language.Turkish": "Türkçe"
+}
