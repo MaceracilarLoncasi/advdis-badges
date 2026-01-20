@@ -33,6 +33,7 @@
       "path": "lang/tr.json"
     }
   ],
+  "url": "https://github.com/MaceracilarLoncasi/advdis-badges",
   "manifest": "https://github.com/MaceracilarLoncasi/advdis-badges/releases/download/v0.1.1/module.json",
   "download": "https://github.com/MaceracilarLoncasi/advdis-badges/releases/download/v0.1.1/advdis-badges.zip",
   "readme": "https://github.com/MaceracilarLoncasi/advdis-badges/blob/main/README.md",
