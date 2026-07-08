@@ -1,8 +1,12 @@
 {
   "id": "advdis-badges",
   "title": "Advantage and Disadvantage Icon",
-  "description": "Show Advantage/Disadvantage as A/D icons on the D&D5e default character sheet. Sources can be configured on items (Details panel) or inferred from item Active Effects.",
-  "version": "0.1.1",
+  "description": "Show Advantage/Disadvantage as A/D badges on the D&D5e default character sheet. Sources can be configured on items (Details panel) or inferred from item Active Effects (roll.mode). (Fix: support v2/shadow DOM item sheets so Details panel appears for equipment/tools.)",
+  "version": "0.1.4",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "14"
+  },
   "authors": [
     {
       "name": "Erozbey"
@@ -11,10 +15,9 @@
       "name": "Maceracılar Loncası"
     }
   ],
-  "compatibility": {
-    "minimum": "13",
-    "verified": "13"
-  },
+  "system": [
+    "dnd5e"
+  ],
   "esmodules": [
     "scripts/advdis.js"
   ],
@@ -32,10 +35,5 @@
       "name": "Türkçe",
       "path": "lang/tr.json"
     }
-  ],
-  "url": "https://github.com/MaceracilarLoncasi/advdis-badges",
-  "manifest": "https://github.com/MaceracilarLoncasi/advdis-badges/releases/download/v0.1.1/module.json",
-  "download": "https://github.com/MaceracilarLoncasi/advdis-badges/releases/download/v0.1.1/advdis-badges.zip",
-  "readme": "https://github.com/MaceracilarLoncasi/advdis-badges/blob/main/README.md",
-  "license": "https://github.com/MaceracilarLoncasi/advdis-badges/blob/main/LICENSE"
+  ]
 }
