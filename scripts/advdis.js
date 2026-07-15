@@ -1,5 +1,16 @@
 const MODULE_ID = "advdis-badges";
 
+function resolveAppRoot(app, html){
+  // Prefer the real rendered DOM root for ApplicationV2 (Shadow DOM)
+  const el = app?.element?.[0] ?? app?.element ?? null;
+  const shadow = el?.shadowRoot ?? null;
+  const htmlEl = html?.[0] ?? html ?? null;
+  return shadow ?? el ?? htmlEl;
+}
+
+function qs(root, sel){ try { return root?.querySelector?.(sel) ?? null; } catch(_e){ return null; } }
+function qsa(root, sel){ try { return Array.from(root?.querySelectorAll?.(sel) ?? []); } catch(_e){ return []; } }
+
 // --- i18n (0.1.0) ---
 Hooks.once("init", () => {
   game.settings.register(MODULE_ID, "language", {
@@ -239,13 +250,49 @@ function injectItemUI(app, htmlArg){
   if ($root.find(".advdis-section").length) return;
 
   const detailsTab = $root.find('.tab[data-tab="details"]').first();
-  const within = detailsTab.length ? detailsTab : $root;
+  const within = detailsTab.length ? detailsTab : (formFallback?.length ? formFallback : $root);
 
   const equip = within.find(".equipment-details").first();
   const section = buildItemSection(item);
   if (equip.length) equip.after(section);
   else within.append(section);
 }
+
+function injectItemUIShadow(app, root){
+  try {
+    if (!root) return;
+    // If already present, do nothing
+    if (qs(root, ".advdis-section")) return;
+
+    // Find the Details tab content in various sheet layouts
+    const within =
+      qs(root, '.tab[data-tab="details"]') ||
+      qs(root, ".tab.details") ||
+      qs(root, '[data-tab="details"]') ||
+      qs(root, "form") ||
+      root;
+
+    // Avoid injecting into Effects tab if the sheet is currently on a different tab and not rendering details
+    // (If within is the whole form/root, injection is still safe.)
+    const sectionHtml = buildItemSectionHtml(app?.object ?? app?.document);
+    if (!sectionHtml) return;
+
+    // Insert after the "Usage" block if present, otherwise append to end
+    const usage =
+      qs(within, ".usage, .item-usage, [data-section='usage'], fieldset.usage") ||
+      null;
+
+    if (usage && usage.parentElement) {
+      usage.insertAdjacentHTML("afterend", sectionHtml);
+    } else {
+      within.insertAdjacentHTML("beforeend", sectionHtml);
+    }
+
+    // Bind events using delegation on root element if possible
+    bindItemSectionEvents(app, root);
+  } catch(_e) {}
+}
+
 Hooks.on("renderItemSheet5e", injectItemUI);
 Hooks.on("renderItemSheet", injectItemUI);
 Hooks.on("renderApplication", (app, html) => { if (isItemSheet(app)) injectItemUI(app, html); });
@@ -351,3 +398,9 @@ Hooks.on("renderApplicationV2", (app) => {
 });
 
 Hooks.once("ready", () => console.log(`${MODULE_ID} | Ready v0.6.6.2`));
+
+
+Hooks.on("closeItemSheet5e", (app) => {
+  try { app._advdisObserver?.disconnect?.(); } catch(_e){}
+  try { delete app._advdisObserver; } catch(_e){}
+});
