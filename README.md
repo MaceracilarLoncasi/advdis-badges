@@ -30,7 +30,7 @@ Module Settings → **Module Language**
 - Auto (Foundry)
 
 ## Compatibility
-- Foundry VTT v13
+- Foundry VTT v13 and v14
 - D&D5e system (default sheet)
 
 ## Credits
